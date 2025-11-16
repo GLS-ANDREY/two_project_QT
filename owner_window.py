@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QMainWindow, QMenuBar,
-    QPushButton, QRadioButton, QSizePolicy, QStatusBar,
+from PySide6.QtWidgets import (QApplication, QLineEdit, QListView, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
     QWidget)
 
 class Ui_MainWindow(object):
@@ -26,15 +26,18 @@ class Ui_MainWindow(object):
         MainWindow.resize(971, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(230, 180, 75, 24))
-        self.radioButton = QRadioButton(self.centralwidget)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setGeometry(QRect(520, 240, 89, 20))
-        self.checkBox = QCheckBox(self.centralwidget)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setGeometry(QRect(450, 290, 76, 20))
+        self.listView = QListView(self.centralwidget)
+        self.listView.setObjectName(u"listView")
+        self.listView.setGeometry(QRect(320, 50, 256, 192))
+        self.add = QPushButton(self.centralwidget)
+        self.add.setObjectName(u"add")
+        self.add.setGeometry(QRect(110, 90, 75, 24))
+        self.delete_2 = QPushButton(self.centralwidget)
+        self.delete_2.setObjectName(u"delete_2")
+        self.delete_2.setGeometry(QRect(110, 130, 75, 24))
+        self.lineEdit = QLineEdit(self.centralwidget)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(370, 310, 341, 22))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -51,8 +54,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
+#if QT_CONFIG(tooltip)
+        self.add.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:72pt; font-weight:700; font-style:italic; text-decoration: underline;\">\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u0432 \u0441\u043f\u0438\u0441\u043e\u043a</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.add.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+#if QT_CONFIG(tooltip)
+        self.delete_2.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:72pt; font-weight:700; font-style:italic; text-decoration: underline;\">\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.delete_2.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
 
