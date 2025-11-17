@@ -15,8 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLineEdit, QListView, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QHeaderView,
+    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QSpinBox, QStatusBar, QTableView,
     QWidget)
 
 class Ui_MainWindow(object):
@@ -26,9 +27,6 @@ class Ui_MainWindow(object):
         MainWindow.resize(971, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.listView = QListView(self.centralwidget)
-        self.listView.setObjectName(u"listView")
-        self.listView.setGeometry(QRect(320, 50, 256, 192))
         self.add = QPushButton(self.centralwidget)
         self.add.setObjectName(u"add")
         self.add.setGeometry(QRect(110, 90, 75, 24))
@@ -38,6 +36,18 @@ class Ui_MainWindow(object):
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(370, 310, 341, 22))
+        self.tableView = QTableView(self.centralwidget)
+        self.tableView.setObjectName(u"tableView")
+        self.tableView.setGeometry(QRect(360, 40, 351, 211))
+        self.tableView.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
+        self.tableView.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.tableView.setAlternatingRowColors(True)
+        self.tableView.setVerticalScrollMode(QAbstractItemView.ScrollMode.ScrollPerItem)
+        self.tableView.setHorizontalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
+        self.tableView.verticalHeader().setVisible(False)
+        self.spinBox = QSpinBox(self.centralwidget)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setGeometry(QRect(310, 310, 42, 22))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
